@@ -1,0 +1,70 @@
+---
+import '@fontsource-variable/inter';
+
+// 'DM Sans'
+// Nunito
+// Dosis
+// Outfit
+// Roboto
+// Literata
+// 'IBM Plex Sans'
+// Karla
+// Poppins
+// 'Fira Sans'
+// 'Libre Franklin'
+// Inconsolata
+// Raleway
+// Oswald
+// 'Space Grotesk'
+// Urbanist
+---
+
+<style is:inline>
+  :root {
+    /* 🎨 Tipografía base */
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: 'Inter Variable';
+    --aw-font-heading: 'Inter Variable';
+
+    /* 🌈 Colores principales (modo claro) */
+    --aw-color-primary: rgb(255, 112, 35); /* Naranja: energía y acción */
+    --aw-color-secondary: rgb(231, 64, 122); /* Rosa: contraste moderno */
+    --aw-color-accent: rgb(255, 221, 51); /* Amarillo: atención y calidez */
+
+    /* 🧱 Fondo y texto */
+    --aw-color-bg-page: rgb(245, 250, 255); /* Azul claro muy suave como base */
+    --aw-color-bg-muted: rgb(230, 240, 250); /* Fondo sutil para tarjetas o secciones */
+
+    --aw-color-text-heading: rgb(35, 47, 91); /* Azul oscuro: títulos */
+    --aw-color-text-default: rgb(35, 47, 91); /* Texto normal */
+    --aw-color-text-muted: rgb(35, 47, 91 / 66%); /* Texto secundario */
+
+    ::selection {
+      background-color: rgb(255, 221, 51); /* amarillo */
+      color: rgb(35, 47, 91);
+    }
+  }
+
+  /* 🌙 Modo oscuro */
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: 'Inter Variable';
+    --aw-font-heading: 'Inter Variable';
+
+    --aw-color-primary: rgb(255, 112, 35); /* Mantén el naranja brillante */
+    --aw-color-secondary: rgb(231, 64, 122);
+    --aw-color-accent: rgb(255, 221, 51);
+
+    --aw-color-bg-page: rgb(20, 25, 45); /* Azul oscuro profundo */
+    --aw-color-bg-muted: rgb(35, 47, 91); /* un poco más claro que el fondo */
+
+    --aw-color-text-heading: rgb(255, 255, 255);
+    --aw-color-text-default: rgb(230, 235, 245);
+    --aw-color-text-muted: rgb(230, 235, 245 / 66%);
+
+    ::selection {
+      background-color: rgb(255, 112, 35); /* naranja */
+      color: white;
+    }
+  }
+</style>

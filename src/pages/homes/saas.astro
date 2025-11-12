@@ -1,0 +1,364 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'SaaS Landing Page',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Login',
+          href: '#',
+        },
+        {
+          variant: 'primary',
+          text: 'Sign Up',
+          href: '#',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="La herramienta definitiva para groomers"
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Comienza ahora', href: '#' },
+      { text: 'Descubre más', href: '#features' },
+    ]}
+    image={{
+      src: 'https://media.gettyimages.com/id/1892103156/es/foto/un-joven-y-su-cachorro-en-la-tienda-de-mascotas.jpg?s=612x612&w=0&k=20&c=ZrLcs0ljIDGeQiEIJAGFllV4vyb-TdAt6No-RaPiUeo=',
+      alt: 'Groomer utilizando la app Ruffo',
+    }}
+  >
+    <Fragment slot="title">
+      Optimiza tu trabajo y <br />
+      ofrece resultados <span class="text-accent dark:text-white">increíbles</span><br />
+      con una sola aplicación
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Potencia tu negocio con <span class="font-semibold">Ruffo</span>,
+      </span>
+      la app creada para <strong>groomers profesionales</strong> que buscan ahorrar tiempo, mejorar su servicio y fidelizar
+      a cada cliente (y mascota).
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Todo lo que tu negocio necesita"
+    subtitle="Simplifica la gestión de tu grooming con herramientas pensadas para hacer tu día más fácil y tus clientes más felices."
+    columns={2}
+    items={[
+      {
+        title: 'Gestión de Citas Inteligente',
+        description:
+          'Permite que tus clientes agenden sus turnos en línea las 24 horas, con recordatorios automáticos y sincronización instantánea con tu calendario.',
+        icon: 'tabler:calendar-check',
+      },
+      {
+        title: 'Control de Inventario',
+        description:
+          'Administra tus productos y suministros con alertas automáticas de stock bajo y un seguimiento detallado por proveedor.',
+        icon: 'tabler:box',
+      },
+      {
+        title: 'Reportes y Análisis',
+        description:
+          'Obtén estadísticas claras sobre tu rendimiento, ingresos y servicios más solicitados. Toma decisiones basadas en datos reales.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Gestión de Clientes y Mascotas',
+        description:
+          'Mantén un historial completo de cada cliente y su mascota: preferencias, servicios anteriores y notas personalizadas.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'App Móvil Integrada',
+        description:
+          'Lleva Ruffo contigo a donde vayas. Accede desde tu teléfono o tablet para revisar citas, clientes o inventario en tiempo real.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Soporte y Actualizaciones Constantes',
+        description:
+          'Estamos contigo en cada paso. Recibe actualizaciones automáticas y soporte técnico para mantener tu negocio siempre al día.',
+        icon: 'tabler:lifebuoy',
+      },
+    ]}
+  />
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Casos de uso"
+    subtitle="Ruffo se adapta a distintos tipos de negocios del mundo pet. Conoce cómo puede ayudarte a optimizar la gestión y mejorar la experiencia de tus clientes."
+    isReversed
+    items={[
+      {
+        title: 'Descripción:',
+        description:
+          '¿Tienes una peluquería o spa canino y deseas profesionalizar tu servicio? Ruffo centraliza todo en un solo lugar: citas, clientes, mascotas, inventario y reportes. Simplifica tu rutina diaria para que puedas concentrarte en lo que realmente importa: cuidar a tus peludos.',
+      },
+      {
+        title: 'Beneficios:',
+        description: `- Agenda en línea 24/7 con recordatorios automáticos. <br /> 
+        - Historial completo de mascotas y servicios. <br /> 
+        - Reportes automáticos con métricas de rendimiento. <br /> 
+        - Mejora la experiencia del cliente y fideliza con recordatorios personalizados.`,
+      },
+    ]}
+    image={{
+      src: 'https://media.istockphoto.com/id/2158124441/es/foto/cute-brown-dog-with-pink-comb-studio-shot.webp?a=1&b=1&s=612x612&w=0&k=20&c=CFafSoWbNoVI4wh2jB6l1wnfKKsb3h_0unH8cpIp5G4=',
+      alt: 'Groomer trabajando con perro feliz',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Gestión completa: <br /><span class="text-2xl">Tu negocio pet, en una sola app</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Próximamente:',
+        description: `Para franquicias o cadenas de grooming, Ruffo ofrece una solución escalable. Centraliza operaciones, supervisa métricas por sucursal y garantiza una atención uniforme en todas tus ubicaciones.`,
+      },
+      {
+        title: 'Beneficios:',
+        description: `
+        - Administración multi-sucursal con control de usuarios y permisos. <br /> 
+        - Reportes globales y por local. <br /> 
+        - Sincronización de inventario y agenda en tiempo real. <br /> 
+        - Acceso desde web o app móvil para equipos y gerentes.`,
+      },
+    ]}
+    image={{
+      src: 'https://media.istockphoto.com/id/1596075693/es/foto/mujer-joven-con-caniche-en-tienda-de-mascotas.jpg?b=1&s=612x612&w=0&k=20&c=C5G2libcYnxTPfXoxclKfXZTPUz85hLYMGISk-zALEQ=',
+      alt: 'Gestión de múltiples sucursales con Ruffo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Grooming profesional: <br /><span class="text-2xl">Crecimiento a escala</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Descripción:',
+        description: `Para groomers frescos, Ruffo simplifica la gestión sin complicaciones. Agenda tus servicios, lleva registro de tus clientes y mantén todo sincronizado desde tu smartphone o tablet.`,
+      },
+      {
+        title: 'Beneficios:',
+        description: `
+        - Recordatorios automáticos por WhatsApp o email. <br /> 
+        - Historial de cada mascota a tu alcance. <br /> 
+        - Ideal para profesionales autónomos que buscan eficiencia y organización.`,
+      },
+    ]}
+    image={{
+      src: 'https://media.istockphoto.com/id/2199471016/photo/close-up-hands-of-unrecognizable-man-holding-and-using-smartphone-standing-on-city-street.jpg?s=612x612&w=0&k=20&c=EEbfkRChWcPsLMGY2VrQoWyl_CgW8vBw9fiDZD5b1gA=',
+      alt: 'Groomer móvil, su cuidado a un click',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Groomers móviles: <br /><span class="text-2xl">Organiza tu día desde el celular o tablet</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    items={[
+      {
+        title: 'Descripción:',
+        description: `Los centros veterinarios o pet shops también pueden aprovechar Ruffo para mejorar la atención al cliente. Gestiona servicios de grooming, inventario de productos, citas médicas y ventas en un solo panel.`,
+      },
+      {
+        title: 'Beneficios:',
+        description: `
+        - Integración entre grooming, tienda y veterinaria. <br /> 
+        - Control de facturación y ventas. <br /> 
+        - Administración centralizada del inventario. <br /> 
+        - Agenda compartida entre groomers y veterinarios.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1602067340370-28d6cc42e8f3?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Centro veterinario gestionando servicios con Ruffo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Pet Shops y Clínicas: <br /><span class="text-2xl">Todo conectado en un mismo sistema</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Pricing Widget ******************* -->
+
+  <Pricing
+    title="Planes simples y transparentes"
+    prices={[
+      {
+        title: 'Básico',
+        subtitle: 'Ideal para groomers que están comenzando. Incluye funciones básicas de gestión de citas y clientes.',
+        price: '10',
+        period: '/ mes',
+        callToAction: {
+          target: '_blank',
+          text: 'pruebalo gratis',
+          href: '#',
+        },
+      },
+      {
+        title: 'Pro',
+        subtitle: 'Para negocios en crecimiento que necesitan control total de inventario, reportes y app móvil.',
+        price: 20,
+        period: '/ mes',
+        callToAction: {
+          target: '_blank',
+          text: 'Actualizar a Pro',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'más popular',
+      },
+      {
+        title: 'Empresarial',
+        subtitle: 'Solución completa para franquicias o centros con múltiples sucursales.',
+        price: 45,
+        period: '/ mes',
+        callToAction: {
+          target: '_blank',
+          text: 'Contactar ventas',
+          href: '#',
+        },
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Preguntas frecuentes"
+    items={[
+      {
+        title: '¿Ruffo funciona en cualquier dispositivo?',
+        description: 'Puedes usarlo en tu tablet o en tu smartphone',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Puedo probar Ruffo gratis?',
+        description: `Por supuesto. Puedes probar los 3 primeros meses sin costo alguno`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Se adapta a negocios con varias sucursales?',
+        description: 'Sí. Ruffo centralizar la administración y supervisar métricas por local.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Ofrecen soporte técnico?',
+        description: `Claro, nuestro equipo de soporte está disponible para ayudarte a configurar tu cuenta y resolver cualquier duda.`,
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="¿Listo para dar el siguiente paso?"
+    subtitle="Estamos aquí para ayudarte a digitalizar tu negocio y llevar tu servicio al siguiente nivel."
+    callToAction={{
+      text: 'Contactar equipo Ruffo',
+      href: '/contacto',
+    }}
+    items={[
+      {
+        title: 'Escríbenos',
+        description: 'davidvela306tr@gmail.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Llámanos',
+        description: '+593 998 675 192',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Síguenos',
+        description: '@ruffoapp',
+        icon: 'tabler:brand-instagram',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <!-- <BlogLatestPosts
+    id="blog"
+    title="Consejos para groomers y pet lovers"
+    information={`Explora artículos, guías y novedades del mundo del grooming profesional. Aprende cómo optimizar tu negocio con tecnología y mejorar la experiencia de tus clientes.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts> -->
+</Layout>
