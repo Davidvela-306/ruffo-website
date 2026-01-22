@@ -1,0 +1,115 @@
+---
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+import Image from '~/components/common/Image.astro';
+
+interface SocialLink {
+  name: string;
+  icon: string;
+  url: string;
+}
+
+interface TeamMember {
+  title: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
+  socials?: SocialLink[];
+  classes?: {
+    panel?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+    socials?: string;
+    icon?: string;
+  };
+}
+
+interface Props {
+  items: TeamMember[];
+  columns?: number;
+  classes?: {
+    container?: string;/*  */
+    panel?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+    socials?: string;
+    icon?: string;
+  };
+}
+
+const { items = [], columns = 3, classes = {} } = Astro.props;
+
+const {
+  container: containerClass = '',
+  panel: panelClass = '',
+  title: titleClass = '',
+  description: descriptionClass = '',
+  image: defaultImageClass = '',
+  socials: socialsClass = '',
+  icon: defaultIconClass = '',
+} = classes;
+
+const gridCols: Record<number, string> = {
+  1: 'grid-cols-1',
+  2: 'md:grid-cols-2',
+  3: 'md:grid-cols-2 lg:grid-cols-3',
+  4: 'md:grid-cols-2 lg:grid-cols-4',
+};
+---
+
+{
+  items.length > 0 && (
+    <div class={twMerge('grid gap-8', gridCols[columns] ?? 'grid-cols-1', containerClass)}>
+      {items.map(({ title, description, image, socials = [], classes: itemClasses = {} }) => (
+        <article
+          class={twMerge(
+            'flex flex-col items-center text-center rounded-lg p-6 bg-white dark:bg-slate-900',
+            panelClass,
+            itemClasses.panel
+          )}
+        >
+          {/* Avatar */}
+          <Image
+            {...image}
+            class={twMerge('mb-4 rounded-full object-cover w-[100px] h-[100px]', defaultImageClass, itemClasses.image)}
+          />
+
+          {/* Nombre */}
+          <h3 class={twMerge('text-lg font-semibold text-slate-800 dark:text-white', titleClass, itemClasses.title)}>
+            {title}
+          </h3>
+
+          {/* RRSS (máx 4) */}
+          {socials.length > 0 && (
+            <ul class={twMerge('flex gap-3 mt-2 mb-3', socialsClass, itemClasses.socials)}>
+              {socials.slice(0, 4).map(({ name, icon, url }) => (
+                <li>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    class="text-slate-500 hover:text-primary transition"
+                  >
+                    <Icon name={icon} class={twMerge('w-5 h-5', defaultIconClass, itemClasses.icon)} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* Descripción */}
+          <p class={twMerge('text-sm text-slate-600 dark:text-slate-400', descriptionClass, itemClasses.description)}>
+            {description}
+          </p>
+        </article>
+      ))}
+    </div>
+  )
+}

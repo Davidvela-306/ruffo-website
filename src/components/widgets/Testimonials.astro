@@ -20,7 +20,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {
@@ -56,7 +56,7 @@ const {
                 )}
 
                 <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold">{name}</p>}
+                  {name && <p class="text-base font-semibold dark:text-white">{name}</p>}
                   {job && <p class="text-xs text-muted">{job}</p>}
                 </div>
               </div>

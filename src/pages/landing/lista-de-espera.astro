@@ -1,0 +1,276 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Advisors from '~/components/widgets/Advisors.astro';
+
+const metadata = {
+  title: 'Product Details Landing Page Demo',
+};
+---
+
+<Layout metadata={metadata}>
+  <div
+    class="relative w-full overflow-hidden bg-no-repeat bg-cover bg-center flex items-center py-12
+    bg-[url('https://media.istockphoto.com/id/2207471259/es/foto/perro-en-un-sal%C3%B3n.webp?a=1&b=1&s=612x612&w=0&k=20&c=dBqkMSWQ30Vp9YxYxYfLTLq9V5DDPK4BHpFa2IoOgRA=')]"
+  >
+    <div class="absolute inset-0 z-0
+         bg-gradient-to-br
+         dark:from-primary/40
+         dark:to-page"></div>
+
+    <div class="relative z-10 w-full">
+      <Hero
+        tagline="Groomer"
+        title="Construye confianza con cada servicio que completas"
+        subtitle="Una plataforma de gestión profesional que transforma información dispersa de grooming en evidencia unificada de excelencia en la que los dueños de mascotas confían"
+        actions={[
+          {
+            variant: 'primary',
+            text: 'Únete a la lista de espera',
+            href: 'https://tally.so/r/wb0R0Z',
+            target: '_blank',
+            icon: 'tabler:square-rounded-arrow-right',
+          },
+        ]}
+      />
+    </div>
+  </div>
+
+  <Features2
+    title="Lo que experimentarás"
+    subtitle="Conoce la esencia de Ruffo: beneficios reales que transforman la gestión de tu estética."
+    tagline="Beneficios"
+    classes={{
+      container: 'md:grid grid-cols-[2fr_1fr] gap-x-4 items-start',
+      headline: {
+        container: 'row-start-1 col-start-2 self-center',
+      },
+      items: {
+        container: 'row-start-1 col-start-1',
+      },
+    }}
+    columns={2}
+    items={[
+      {
+        title: 'Deja de perder clientes por el caos',
+        description:
+          'Te sentirás seguro cada vez que un dueño pregunte: «¿qué hiciste la última vez?». No más buscar entre mensajes de WhatsApp o notas desvanecidas. Tu profesionalismo se vuelve visible e innegable.',
+        icon: 'tabler:shield-check',
+        classes: {
+          title: 'dark:text-white',
+        },
+      },
+      {
+        title: 'Protege tu reputación ganada',
+        description:
+          'Dormirás mejor sabiendo que cada servicio está documentado profesionalmente. Cuando surgen malentendidos, tienes pruebas. Tu reputación no es vulnerable a detalles olvidados o situaciones de “dijo, dijo”.',
+        icon: 'tabler:heart-handshake',
+        classes: {
+          title: 'dark:text-white',
+        },
+      },
+      {
+        title: 'Envía reportes profesionales al instante',
+        description:
+          'Sentirás orgullo al ver a los dueños recibir su reporte completo de grooming con un toque profesional. Todo formateado y enviado por WhatsApp, justo donde ya se comunican contigo.',
+        icon: 'tabler:bolt',
+        classes: {
+          title: 'dark:text-white',
+        },
+      },
+      {
+        title: 'Crece mediante la confianza del cliente',
+        description:
+          'Verás cómo se multiplican las referencias cuando los dueños comparten tus reportes. Tu enfoque organizado se convierte en tu mejor herramienta de marketing, sin competir solo por precio.',
+        icon: 'tabler:trending-up',
+        classes: {
+          title: 'dark:text-white',
+        },
+      },
+    ]}
+  />
+  <Testimonials
+    title="¿Qué opinan nuestros usuarios?"
+    testimonials={[
+      {
+        testimonial:
+          'Desde que usamos Ruffo, dejamos de perder citas y clientes. Ahora todo queda registrado: agenda, pagos y preferencias de cada mascota. Nos ahorra tiempo todos los días.',
+        name: 'María Fernanda López',
+        job: 'Propietaria de peluquería canina',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=2070&q=80',
+          alt: 'María Fernanda López',
+        },
+      },
+      {
+        testimonial:
+          'Ruffo nos ayudó a organizarnos como negocio. Antes todo era WhatsApp y papel. Hoy tenemos control real de citas, historial de mascotas y cobros sin errores.',
+        name: 'Carlos Andrade',
+        job: 'Groomer profesional',
+        image: {
+          src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?auto=format&fit=crop&w=2070&q=80',
+          alt: 'Carlos Andrade',
+        },
+      },
+      {
+        testimonial:
+          'Lo que más me gusta es la simplicidad. El sistema es claro, rápido y pensado para groomers. Ruffo se siente como un asistente digital para mi peluquería.',
+        name: 'Valentina Ríos',
+        job: 'Emprendedora pet care',
+        image: {
+          src: 'https://images.unsplash.com/photo-1512361436605-a484bdb34b5f?auto=format&fit=crop&w=2070&q=80',
+          alt: 'Valentina Ríos',
+        },
+      },
+    ]}
+    classes={{
+      container: 'bg-muted/30',
+      headline: {
+        title: 'bg-clip-text text-transparent bg-gradient-to-r from-primary to-muted dark:from-primary dark:to-secondary/50'
+      },
+    }}
+  />
+
+  <Features3
+    id="features"
+    title="¿Listo para dejar de perder confianza por información perdida?"
+    columns={1}
+    classes={{
+      items: {
+        container:
+          'max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600',
+        panel: 'mx-auto max-w-lg',
+        icon: 'text-primary w-5 h-5',
+        description: 'text-center w-full',
+      },
+    }}
+    items={[
+      {
+        description: 'Acceso temprano gratuito para peluqueros fundadores.',
+        icon: 'tabler:checkbox',
+      },
+      {
+        description: 'No se requiere tarjeta de crédito',
+        icon: 'tabler:checkbox',
+      },
+      {
+        description: 'Sé el primero en lanzar en tu región',
+        icon: 'tabler:checkbox',
+      },
+      {
+        description: 'Soporte exclusivo de configuración y capacitación.',
+        icon: 'tabler:checkbox',
+      },
+      {
+        description: 'Construido específicamente para negocios de grooming en LATAM',
+        icon: 'tabler:checkbox',
+      },
+      {
+        callToAction: {
+          variant: 'primary',
+          text: 'Únete a la lista de espera',
+          href: 'https://tally.so/r/wb0R0Z',
+          target: '_blank',
+          icon: 'tabler:square-rounded-arrow-right',
+          class: 'bg-red',
+        },
+        classes: { panel: 'justify-center' },
+      },
+    ]}
+  />
+
+  <Features2
+    id="features"
+    tagline="Advisors"
+    title="Expertos que impulsan nuestro crecimiento"
+    columns={1}
+    classes={{
+      items: {
+        panel: 'mx-auto max-w-lg',
+        icon: 'text-primary w-5 h-5',
+        description: 'text-center w-full',
+      },
+    }}
+  >
+    <Advisors
+      slot="content"
+      columns={2}
+      classes={{
+        panel: 'dark:bg-gradient-to-bl dark:from-primary/20 dark:via-primary/10 dark:to-muted/10',
+        container: 'mt-12',
+        image: 'ring-2 ring-primary',
+      }}
+      items={[
+        {
+          title: 'Pamela Valdes',
+          description:
+            'CEO y cofundadora de Musa. Anteriormente cofundó Beek, logrando más de 5 millones de descargas antes de su adquisición por Amazon. Becaria del Thiel Fellowship. Reside en San Francisco.',
+
+          image: {
+            src: 'https://scontent.cdninstagram.com/v/t51.82787-19/532946481_18529569724036900_8511949379000042006_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=103&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=qUF_S5aqWssQ7kNvwG5Yeki&_nc_oc=AdmbxbI-IJcCBOCF-zV99mjSwfPvgA7rSteepUBvQMUD7yrLH99e_TrAdLbwS82DmNw&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=06yZW-jm6QjQ-gMghV9oug&oh=00_AfrHCKSQxNha7UkzyVbpC700eE8ktRTEsiQ5j_KRTxu2KQ&oe=69779483',
+            alt: 'Pamela Valdes',
+          },
+          socials: [
+            {
+              name: 'Instagram',
+              icon: 'tabler:brand-instagram',
+              url: 'https://www.instagram.com/pamevls/',
+            },
+            {
+              name: 'LinkedIn',
+              icon: 'tabler:brand-linkedin',
+              url: 'https://www.linkedin.com/in/pamelavaldesesteva/',
+            },
+            {
+              name: 'Website',
+              icon: 'tabler:world',
+              url: 'https://www.musa.com/es/',
+            },
+          ],
+          classes: {
+            title: 'dark:text-white',
+            image: 'rounded-full w-full max-w-24 h-full max-h-24',
+          },
+        },
+        {
+          title: 'Manuel Angel',
+          description:
+            'Coach certificado en respiración y biohacker. Miembro del equipo fundador de Grin Scooters (YC W18). Ex Head of Growth en Airtm, donde escaló la plataforma a más de 1.5 millones de usuarios. Exfutbolista profesional.',
+
+          image: {
+            src: 'https://framerusercontent.com/images/DIsJHGmyknApwt1PkS6o61tHA.png',
+            alt: 'Manuel Angel',
+          },
+          socials: [
+            {
+              name: 'Instagram',
+              icon: 'tabler:brand-instagram',
+              url: 'https://www.instagram.com/thebreathmanu/',
+            },
+            {
+              name: 'LinkedIn',
+              icon: 'tabler:brand-linkedin',
+              url: 'https://www.linkedin.com/in/manuelangelhakim/',
+            },
+            {
+              name: 'Website',
+              icon: 'tabler:world',
+              url: 'https://www.breathmanu.com/',
+            },
+          ],
+          classes: {
+            title: 'dark:text-white',
+            image: 'rounded-full w-full max-w-24 h-full max-h-24',
+          },
+        },
+      ]}
+    />
+  </Features2>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Layout>

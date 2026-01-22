@@ -1,5 +1,6 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
+import type { ImageProps } from './utils/images-optimization';
 
 export interface Post {
   /** A unique ID number that identifies a post. */
@@ -138,7 +139,7 @@ export interface Item {
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
-  image?: Image;
+  image?: ImageProps;
 }
 
 export interface Price {
