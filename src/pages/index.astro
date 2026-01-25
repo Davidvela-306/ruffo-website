@@ -19,24 +19,23 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Fragment slot="header">
-    <Header
-      {...headerData}
-      actions={[
-        {
-          variant: 'secondary',
-          text: 'Login',
-          href: '#',
-        },
-        {
-          variant: 'primary',
-          text: 'Sign Up',
-          href: '#',
-        },
-      ]}
-      isSticky
-    />
+    <Header {...headerData} isSticky />
   </Fragment>
-
+  <!--  actions={
+    [
+      {
+        variant: 'secondary',
+        text: 'Login',
+        href: '#',
+      },
+      {
+        variant: 'primary',
+        text: 'Sign Up',
+        href: '#',
+      },
+    ]
+  }^
+   -->
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
@@ -334,12 +333,12 @@ const metadata = {
     items={[
       {
         title: 'Escríbenos',
-        description: 'davidvela306tr@gmail.com',
+        description: 'kente.soporte@gmail.com',
         icon: 'tabler:mail',
       },
       {
         title: 'Llámanos',
-        description: '+593 998 675 192',
+        description: '+593 98 378 9396',
         icon: 'tabler:phone',
       },
       {
