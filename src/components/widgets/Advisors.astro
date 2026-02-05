@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
 import Image from '~/components/common/Image.astro';
+import type { ImageMetadata } from 'astro';
 
 interface SocialLink {
   name: string;
@@ -12,12 +13,7 @@ interface SocialLink {
 interface TeamMember {
   title: string;
   description: string;
-  image: {
-    src: string;
-    alt: string;
-    width?: number;
-    height?: number;
-  };
+  image: ImageMetadata;
   socials?: SocialLink[];
   classes?: {
     panel?: string;
@@ -33,7 +29,7 @@ interface Props {
   items: TeamMember[];
   columns?: number;
   classes?: {
-    container?: string;/*  */
+    container?: string /*  */;
     panel?: string;
     title?: string;
     description?: string;
@@ -76,8 +72,9 @@ const gridCols: Record<number, string> = {
         >
           {/* Avatar */}
           <Image
-            {...image}
-            class={twMerge('mb-4 rounded-full object-cover w-[100px] h-[100px]', defaultImageClass, itemClasses.image)}
+            src={image}
+            alt={title}
+            class={twMerge('mb-4 rounded-full object-cover', defaultImageClass, itemClasses.image)}
           />
 
           {/* Nombre */}

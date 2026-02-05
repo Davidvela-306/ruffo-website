@@ -5,9 +5,13 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Advisors from '~/components/widgets/Advisors.astro';
+import pamelaValdesImg from 'src/assets/images/lista-de-espera/pamela-valdes.png';
+import miguelAngelImg from 'src/assets/images/lista-de-espera/miguel-angel.png';
+
+[pamelaValdesImg, miguelAngelImg].forEach((img) => (img.width = img.height = 100));
 
 const metadata = {
-  title: 'Product Details Landing Page Demo',
+  title: 'Ruffo - Lista de espera',
 };
 ---
 
@@ -16,16 +20,19 @@ const metadata = {
     class="relative w-full overflow-hidden bg-no-repeat bg-cover bg-center flex items-center py-12
     bg-[url('https://media.istockphoto.com/id/2207471259/es/foto/perro-en-un-sal%C3%B3n.webp?a=1&b=1&s=612x612&w=0&k=20&c=dBqkMSWQ30Vp9YxYxYfLTLq9V5DDPK4BHpFa2IoOgRA=')]"
   >
-    <div class="absolute inset-0 z-0
-         bg-gradient-to-br
-         dark:from-primary/40
-         dark:to-page"></div>
+    <div
+      class="absolute inset-0 z-0
+         bg-gradient-to-r
+         from-slate-900/90 via-slate-900/60 to-slate-900/40
+         dark:from-black/95 dark:via-black/70 dark:to-black/40"
+    >
+    </div>
 
     <div class="relative z-10 w-full">
       <Hero
-        tagline="Groomer"
-        title="Construye confianza con cada servicio que completas"
-        subtitle="Una plataforma de gestión profesional que transforma información dispersa de grooming en evidencia unificada de excelencia en la que los dueños de mascotas confían"
+        tagline='<span class="text-primary dark:text-secondary font-bold tracking-widest uppercase drop-shadow-sm">Groomer</span>'
+        title='<span class="text-white drop-shadow-2xl">Construye confianza con cada servicio que completas</span>'
+        subtitle='<span class="text-white drop-shadow-md">Una plataforma de gestión profesional que transforma información dispersa de grooming en evidencia unificada de excelencia en la que los dueños de mascotas confían</span>'
         actions={[
           {
             variant: 'primary',
@@ -129,7 +136,8 @@ const metadata = {
     classes={{
       container: 'bg-muted/30',
       headline: {
-        title: 'bg-clip-text text-transparent bg-gradient-to-r from-primary to-muted dark:from-primary dark:to-secondary/50'
+        title:
+          'bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-secondary/50',
       },
     }}
   />
@@ -199,7 +207,8 @@ const metadata = {
       slot="content"
       columns={2}
       classes={{
-        panel: 'dark:bg-gradient-to-bl dark:from-primary/20 dark:via-primary/10 dark:to-muted/10',
+        panel:
+          'bg-gradient-to-bl from-muted/50 via-transparent to-transparent dark:bg-gradient-to-bl dark:from-primary/20 dark:via-primary/10 dark:to-muted/10',
         container: 'mt-12',
         image: 'ring-2 ring-primary',
       }}
@@ -209,10 +218,7 @@ const metadata = {
           description:
             'CEO y cofundadora de Musa. Anteriormente cofundó Beek, logrando más de 5 millones de descargas antes de su adquisición por Amazon. Becaria del Thiel Fellowship. Reside en San Francisco.',
 
-          image: {
-            src: 'https://scontent.cdninstagram.com/v/t51.82787-19/532946481_18529569724036900_8511949379000042006_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=103&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=qUF_S5aqWssQ7kNvwG5Yeki&_nc_oc=AdmbxbI-IJcCBOCF-zV99mjSwfPvgA7rSteepUBvQMUD7yrLH99e_TrAdLbwS82DmNw&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=06yZW-jm6QjQ-gMghV9oug&oh=00_AfrHCKSQxNha7UkzyVbpC700eE8ktRTEsiQ5j_KRTxu2KQ&oe=69779483',
-            alt: 'Pamela Valdes',
-          },
+          image: pamelaValdesImg,
           socials: [
             {
               name: 'Instagram',
@@ -232,7 +238,7 @@ const metadata = {
           ],
           classes: {
             title: 'dark:text-white',
-            image: 'rounded-full w-full max-w-24 h-full max-h-24',
+            image: 'rounded-full w-full max-w-32 max-h-32',
           },
         },
         {
@@ -240,10 +246,7 @@ const metadata = {
           description:
             'Coach certificado en respiración y biohacker. Miembro del equipo fundador de Grin Scooters (YC W18). Ex Head of Growth en Airtm, donde escaló la plataforma a más de 1.5 millones de usuarios. Exfutbolista profesional.',
 
-          image: {
-            src: 'https://framerusercontent.com/images/DIsJHGmyknApwt1PkS6o61tHA.png',
-            alt: 'Manuel Angel',
-          },
+          image: miguelAngelImg,
           socials: [
             {
               name: 'Instagram',
@@ -263,7 +266,7 @@ const metadata = {
           ],
           classes: {
             title: 'dark:text-white',
-            image: 'rounded-full w-full max-w-24 h-full max-h-24',
+            image: 'rounded-full w-full max-w-32 max-h-32',
           },
         },
       ]}
